@@ -18,7 +18,7 @@ app.get("/status/", (req, res) => {
   console.log(req.query);
   const { show, sort } = req.query;
   let status = show ? show.split(",") : ["error", "failure"];
-  let sort_by = sort ? sort.split(",") : ["status", "asc"];
+  let sort_by = sort ? sort.split(",") : ["row", "asc"];
   let default_dict = {
     status: "Error",
     reason: "Server Error",
