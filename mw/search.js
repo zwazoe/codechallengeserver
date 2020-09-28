@@ -1,7 +1,11 @@
-const getIncludes = function (data, arr, callback) {
+// filter out status that included the items on the array.
+
+const getIncludes = function (data, config = {}, callback) {
+  let filter_key = config.filter_key || "status";
+  let inc = config.inc || ["Error"];
   let output = data.filter((item) => {
-    let product = item.status && item.status.toLowerCase();
-    return arr.includes(product);
+    let product = item[filter_key] && item[filter_key].toLowerCase();
+    return inc.includes(product);
   });
   if (callback) {
     output = callback(output);
@@ -9,13 +13,16 @@ const getIncludes = function (data, arr, callback) {
   return output;
 };
 
-const defaultValue = function (data, obj, callback) {
-  let keys = Object.keys(obj);
+// task: add default value to the data
+// purpose: Every entry in the JSON file should have a status and a reason, but our data isn't perfect. A missing status should default to "Error", and a missing reason should default to "Server Error".
+const defaultValue = function (data, config = {}, callback) {
+  let default_dict = config.default_dict || {};
+  let keys = Object.keys(default_dict);
   let output = data.map((item, index) => {
     let new_item = { row: index + 1, ...item };
     keys.forEach((element) => {
       if (!new_item[element]) {
-        new_item[element] = obj[element];
+        new_item[element] = default_dict[element];
       }
     });
     return new_item;
@@ -26,7 +33,11 @@ const defaultValue = function (data, obj, callback) {
   return output;
 };
 
-const sortValue = function (data, sort_by, callback) {
+// task: sort in accordance with sort_by arg
+// purpose: Your implementation should allow a user to click on any of the 3 column headers - Row, Status and Reason. This should  cause the entire table to sort by that field
+
+const sortValue = function (data, config = {}, callback) {
+  let sort_by = config.sort_by || [];
   let output = data.sort((a, b) => {
     let first = a[sort_by[0]];
     let second = b[sort_by[0]];
@@ -35,7 +46,7 @@ const sortValue = function (data, sort_by, callback) {
       second = second.toLowerCase();
     }
 
-    if (sort_by[1] == "asc") {
+    if (sort_by[1] === "asc") {
       if (first < second) return -1;
       return 1;
     }
