@@ -1,5 +1,3 @@
-// filter out status that included the items on the array.
-
 const getIncludes = function (data, config = {}, callback) {
   let filter_key = config.filter_key || "status";
   let inc = config.inc || ["Error"];

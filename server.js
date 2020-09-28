@@ -24,8 +24,8 @@ app.get("/status/", (req, res) => {
     reason: "Server Error",
   };
 
-  let output = getIncludes(data, status, (v) =>
-    defaultValue(v, default_dict, (v) => sortValue(v, sort_by))
+  let output = getIncludes(data, { inc: status }, (v) =>
+    defaultValue(v, { default_dict }, (v) => sortValue(v, { sort_by }))
   );
 
   res.json(output);
