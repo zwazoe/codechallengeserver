@@ -1,0 +1,80 @@
+[
+  {
+    "status": "Error",
+    "reason": "Error message 1"
+  },
+  {
+    "status": "Success",
+    "reason": "Success message 1"
+  },
+  {
+    "status": "Success"
+  },
+  {
+    "status": "Error",
+    "reason": "Error message 2"
+  },
+  {
+    "status": "Failure",
+    "reason": "Failure message 1"
+  },
+  {
+    "status": "Failure"
+  },
+  {
+    "status": "Success",
+    "reason": "Success message 3"
+  },
+  {},
+  {
+    "status": "Failure",
+    "reason": "Failure message 3"
+  },
+  {
+    "status": "Success",
+    "reason": "Success message 4"
+  },
+  {
+    "reason": "Some reason"
+  },
+  {
+    "status": "Success",
+    "reason": "Success message 5"
+  },
+  {
+    "status": "Error"
+  },
+  {
+    "status": "Error",
+    "reason": "Error message 4"
+  },
+  {
+    "status": "Failure",
+    "reason": "Failure message 4"
+  },
+  {
+    "status": "Failure"
+  },
+  {
+    "status": "Failure"
+  },
+  {
+    "reason": "Something happened"
+  },
+  {
+    "status": "Success",
+    "reason": "Success message 6"
+  },
+  {
+    "status": "Error",
+    "reason": "Error message 5"
+  },
+  {
+    "status": "Failure",
+    "reason": "Failure message 7"
+  },
+  {
+    "status": "Error",
+    "reason": "Error message 6"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "logger": [
+      {
+        "label": "Row",
+        "sort-down": "fa fas-arrow-down",
+        "sort-up": "fa fas-arrow-up"
+      },
+      {
+        "label": "Status",
+        "sort-down": "fa fas-arrow-down",
+        "sort-up": "fa fas-arrow-up"
+      },
+      {
+        "label": "Reason",
+        "sort-down": "fa fas-arrow-down",
+        "sort-up": "fa fas-arrow-up"
+      }
+    ]
+  }
+]
